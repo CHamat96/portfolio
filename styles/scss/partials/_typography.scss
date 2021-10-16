@@ -4,6 +4,10 @@ h3 {
     font-family: $headFont;
 }
 
+h2 {
+    font-size: 3rem;
+}
+
 p,
 label,
 input {
@@ -13,6 +17,11 @@ input {
 a,
 h4 {
     font-family: $accentFont;
+}
+
+p {
+    letter-spacing: 0.1rem;
+    font-weight: 500;
 }
 
 a {
@@ -49,11 +58,24 @@ header {
 
 .questionNav {
     h2 {
-        font-size: 3rem;
         font-weight: 300;
         font-style: italic;
     }
     a {
         font-size: 1.5rem;
     }
+}
+
+section {
+    h2 {
+        color: $blue;
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+}
+
+.backgroundText {
+    text-transform: uppercase;
+    font-size: 7rem;
+    opacity: 0.1;
 }

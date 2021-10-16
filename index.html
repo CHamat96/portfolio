@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
 </head>
 <body>
   <header>
@@ -17,7 +18,7 @@
       </div>
       <div class="headerNavigation">
         <ul>
-          <li><a href="#">About</a></li>
+          <li><a href="#about">About</a></li>
           <li><a href="#">Skills</a></li>
           <li><a href="#">My Work</a></li>
           <li><a href="#">Contact</a></li>
@@ -33,18 +34,44 @@
         </div>
       </div>
     </section>
-    <div class="questionNav">
+    <!-- <div class="questionNav">
       <h2>What do you want to know?</h2>
       <ul>
-        <li><a href="#">Who am I?</a></li>
+        <li><a href="#about">Who am I?</a></li>
         <li><a href="#">What can I do?</a></li>
         <li><a href="#">What have I done?</a></li>
         <li><a href="#">How to contact me?</a></li>
       </ul>
-    </div>
+    </div> -->
   </header>
   <main>
-
+    <section class="aboutMe" id="about">
+      <div class="wrapper">
+        <div class="textContent">
+          <div class="heading">
+            <h2>About Me</h2>
+            <div class="backgroundText">
+              <h4 aria-hidden>
+                Who am I?
+              </h4>
+            </div>
+          </div>
+          <p>Hi, I’m Corey! I’m a front-end Web Developer from Toronto, Ontario. I enjoy building websites that focus on accessibility & responsiveness. I have prior experience in technical theatre, and have developed a sharp attention to detail & excellent communication skills. I bring the ability to work directly with clients, listen to their needs attentively, and bring their vision for the project to life!</p>
+        </div>
+      </div>
+    </section>
+    <section class="techStack" id="skills">
+      <div class="wrapper">
+        <div class="skillGallery">
+          <div class="heading">
+            <h2>My Skills</h2>
+            <div class="backgroundText" aria-hidden>
+              <h4>What Can I Do?</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <footer>
     <section class="contactFormFlex">
@@ -65,5 +92,7 @@
       </div>
     </section>
   </footer>
+
+  <script src="./scripts/app.js"></script>
 </body>
 </html>

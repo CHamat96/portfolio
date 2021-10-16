@@ -1,0 +1,23 @@
+.techStack {
+    h2 {
+        color: #fff;
+    }
+    background: $blue;
+    ul {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    li {
+        margin: auto;
+        flex: 0 2 33%;
+        padding: 1.5rem;
+    }
+    i {
+        font-size: 2.5rem;
+        color: #fff;
+    }
+}

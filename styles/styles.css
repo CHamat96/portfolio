@@ -291,12 +291,6 @@ body {
   margin: 0 auto;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
 @-webkit-keyframes fade {
   0% {
     opacity: 0;
@@ -342,6 +336,10 @@ h3 {
   font-family: "Raleway", serif;
 }
 
+h2 {
+  font-size: 3rem;
+}
+
 p,
 label,
 input {
@@ -351,6 +349,11 @@ input {
 a,
 h4 {
   font-family: "Oswald", sans-serif;
+}
+
+p {
+  letter-spacing: 0.1rem;
+  font-weight: 500;
 }
 
 a {
@@ -380,12 +383,23 @@ header a {
 }
 
 .questionNav h2 {
-  font-size: 3rem;
   font-weight: 300;
   font-style: italic;
 }
 .questionNav a {
   font-size: 1.5rem;
+}
+
+section h2 {
+  color: #4154be;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.backgroundText {
+  text-transform: uppercase;
+  font-size: 7rem;
+  opacity: 0.1;
 }
 
 header {
@@ -480,6 +494,55 @@ header nav {
           flex: 0 0 50%;
 }
 
+.aboutMe .heading {
+  text-align: right;
+}
+.aboutMe .textContent {
+  width: 60%;
+  margin-right: 0;
+  margin-left: auto;
+}
+.aboutMe .backgroundText {
+  position: absolute;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  right: 0;
+}
+
+.techStack {
+  background: #4154be;
+}
+.techStack h2 {
+  color: #fff;
+}
+.techStack ul {
+  text-align: center;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.techStack li {
+  margin: auto;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 2 33%;
+          flex: 0 2 33%;
+  padding: 1.5rem;
+}
+.techStack i {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -491,4 +554,19 @@ img {
 }
 .copyright a.themeCredit {
   text-transform: uppercase;
+}
+
+.heading {
+  position: relative;
+  z-index: 5;
+}
+.heading .backgroundText {
+  position: absolute;
+  top: -10rem;
+  z-index: 0;
+}
+
+section {
+  padding: 2rem 0;
+  min-height: 50vh;
 }
