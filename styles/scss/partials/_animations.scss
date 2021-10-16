@@ -1,0 +1,24 @@
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 50%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes fadeDelay {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@mixin fadeInDelay($delayTime) {
+    animation: fadeDelay #{$delayTime}, fade 0.8s #{$delayTime};
+}

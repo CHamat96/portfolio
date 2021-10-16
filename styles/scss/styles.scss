@@ -1,0 +1,20 @@
+@import "./partials/setup";
+@import "./partials/vars";
+@import "./partials/animations";
+@import "./partials/typography";
+@import "./sections/header";
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.copyright {
+    a {
+        display: block;
+        &.themeCredit {
+            text-transform: uppercase;
+        }
+    }
+}
