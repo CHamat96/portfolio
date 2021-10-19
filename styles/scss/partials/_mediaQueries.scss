@@ -1,0 +1,15 @@
+@media (max-width: 720px) {
+    html {
+        font-size: 90%;
+    }
+    .centreFlex {
+        flex-flow: column;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 350px) {
+    header {
+        font-size: 80%;
+    }
+}

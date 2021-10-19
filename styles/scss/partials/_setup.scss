@@ -238,3 +238,15 @@ body {
     width: 85%;
     margin: 0 auto;
 }
+
+.heading {
+    position: relative;
+    .backgroundText {
+        position: absolute;
+        top: -2rem;
+        z-index: -1;
+        h4 {
+            margin: 0;
+        }
+    }
+}

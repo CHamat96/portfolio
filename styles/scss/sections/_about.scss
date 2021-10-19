@@ -1,15 +1,50 @@
 .aboutMe {
+    padding: 0;
+    .wrapper {
+        max-width: 1500px;
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    img {
+        max-height: calc(60vh + 6rem);
+        flex: 1 5 calc(35% - 3rem);
+        padding: 0;
+        object-fit: cover;
+    }
+
+    .textContent {
+        flex: 2 1 calc(65% - 6rem);
+        padding: 3rem;
+        display: flex;
+        flex-flow: column;
+    }
     .heading {
+        flex: 0 0 auto;
         text-align: right;
     }
-    .textContent {
-        width: 60%;
-        margin-right: 0;
-        margin-left: auto;
+    p {
+        flex: 2 0 100%;
     }
     .backgroundText {
         position: absolute;
         width: fit-content;
         right: 0;
+    }
+    .linkContainer {
+        margin: 1rem 0;
+        align-self: flex-end;
+    }
+    .aboutLink {
+        display: inline;
+        background: $darkBlue;
+        color: $white;
+        padding: 0.75rem 0.5rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 0.1rem;
     }
 }
