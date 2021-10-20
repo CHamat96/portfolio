@@ -228,9 +228,12 @@ ul {
     padding: 0;
     display: flex;
 }
-
-body {
-    font-size: 125%;
+html {
+    body {
+        font-size: 125%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
 }
 
 .wrapper {

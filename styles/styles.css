@@ -281,8 +281,10 @@ ul {
   display: flex;
 }
 
-body {
+html body {
   font-size: 125%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .wrapper {
@@ -573,6 +575,8 @@ header nav {
 .startScroll {
   margin-top: 5rem;
   text-align: center;
+  -webkit-animation: fadeDelay 1.6s, fade 0.8s 1.6s;
+          animation: fadeDelay 1.6s, fade 0.8s 1.6s;
 }
 .startScroll h3 {
   font-family: "Oswald", sans-serif;

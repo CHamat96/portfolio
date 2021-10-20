@@ -99,4 +99,5 @@ header {
         transform: scale(1);
         animation: pulse infinite 0.8s ease-in-out;
     }
+    @include fadeInDelay("1.6s");
 }
