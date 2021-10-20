@@ -18,7 +18,6 @@ portfolio.navScroll = () => {
       let navOffset = 100;
       let targetPosition = target.offsetTop;
       let offsetPosition = targetPosition - navOffset
-  
       window.scrollTo({
         top:offsetPosition,
         behavior:"smooth"

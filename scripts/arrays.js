@@ -5,7 +5,10 @@ const projectArray = [
       "React", 
       "Firebase", 
       "HTML5",
-      "SASS",
+      "SCSS",
+      "CSS3",
+      "JavaScript",
+      "Firebase",
       "Group Collab",
       "API"
     ],
@@ -19,7 +22,8 @@ const projectArray = [
     languages:[
       "JavaScript",
       "HTML5",
-      "SASS",
+      "SCSS",
+      "CSS3",
       "Paired Programming",
       "API"
     ],
@@ -33,8 +37,10 @@ const projectArray = [
     languages:[
       "React",
       "Firebase",
-      "SASS",
+      "JavaScript",
+      "SCSS",
       "HTML5",
+      "CSS3",
       "API"
     ],
     src:`./assets/playlistPreview.jpg`,
@@ -46,8 +52,8 @@ const projectArray = [
     name:'Planted',
     languages:[
       "HTML5",
-      "SASS",
-      "CSS3"
+      "CSS3",
+      "SCSS"
     ],
     src:`./assets/plantedPreview.jpg`,
     description:"A Multi-Page HTML/SCSS website that was designed based on a client brief/styleguide",

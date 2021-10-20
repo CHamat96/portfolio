@@ -3,7 +3,7 @@ header {
     min-height: 100vh;
     background: linear-gradient(180deg, $grey 50%, $blue 50%, $blue 100%);
     nav {
-        // @include fadeInDelay("0s");
+        @include fadeInDelay("0.8s");
         padding: 2rem 0;
         display: flex;
         justify-content: space-between;
@@ -28,6 +28,26 @@ header {
         li {
             padding: 0.5rem 0;
         }
+        a {
+            position: relative;
+            transition: all 0.5s ease;
+        }
+        a::after {
+            background: none repeat scroll 0 0 transparent;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 0.05rem;
+            left: 0;
+            position: absolute;
+            background: #fff;
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            width: 0;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
     }
     .navHead:hover .subNav,
     .navHead:focus-within .subNav {
@@ -47,6 +67,7 @@ header {
     align-items: center;
     justify-content: center;
     margin-top: 13rem;
+    @include fadeInDelay("0s");
 }
 .profileImg {
     min-width: 15rem;
@@ -65,7 +86,6 @@ header {
     span {
         display: block;
     }
-    // @include fadeInDelay("0.8s");
 }
 
 .startScroll {

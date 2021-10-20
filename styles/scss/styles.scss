@@ -36,4 +36,21 @@ section:nth-child(odd) {
     background-size: 10px 10px;
 }
 
+.toTop {
+    position: fixed;
+    z-index: 20;
+    right: 2rem;
+    bottom: 5rem;
+    padding: 0.75rem;
+    background: $lightBlue;
+    text-transform: uppercase;
+    font-weight: 900;
+    &:hover {
+        background: $darkBlue;
+    }
+    &:active {
+        background: $blue;
+    }
+}
+
 @import "./partials/mediaQueries";

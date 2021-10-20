@@ -454,6 +454,8 @@ header {
   background: linear-gradient(180deg, #272727 50%, #1428a0 50%, #1428a0 100%);
 }
 header nav {
+  -webkit-animation: fadeDelay 0.8s, fade 0.8s 0.8s;
+          animation: fadeDelay 0.8s, fade 0.8s 0.8s;
   padding: 2rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -482,6 +484,27 @@ header nav {
 }
 .headerNavigation .subNav li {
   padding: 0.5rem 0;
+}
+.headerNavigation .subNav a {
+  position: relative;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.headerNavigation .subNav a::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 0.05rem;
+  left: 0;
+  position: absolute;
+  background: #fff;
+  -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.headerNavigation .subNav a:hover::after {
+  width: 100%;
 }
 .headerNavigation .navHead:hover .subNav,
 .headerNavigation .navHead:focus-within .subNav {
@@ -516,6 +539,8 @@ header nav {
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 13rem;
+  -webkit-animation: fadeDelay 0s, fade 0.8s 0s;
+          animation: fadeDelay 0s, fade 0.8s 0s;
 }
 
 .profileImg {
@@ -752,7 +777,7 @@ header nav {
   color: #1428a0;
   text-shadow: 0.1rem 0.1rem lightgrey;
   font-weight: 600;
-  margin: 0 0.5rem;
+  margin: 0.5rem 0.5rem;
   padding: 1rem;
   border: solid #ffffff 0.1rem;
   border-radius: 0.25rem;
@@ -841,8 +866,8 @@ header nav {
 .contactForm {
   padding: 1rem;
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 calc(25% - 2rem);
-          flex: 1 1 calc(25% - 2rem);
+      -ms-flex: 1 1 calc(50% - 2rem);
+          flex: 1 1 calc(50% - 2rem);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -931,6 +956,23 @@ section:nth-child(odd) {
   background-size: 10px 10px;
 }
 
+.toTop {
+  position: fixed;
+  z-index: 20;
+  right: 2rem;
+  bottom: 5rem;
+  padding: 0.75rem;
+  background: #4c60cf;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.toTop:hover {
+  background: #001280;
+}
+.toTop:active {
+  background: #1428a0;
+}
+
 @media (max-width: 720px) {
   html {
     font-size: 90%;
@@ -960,5 +1002,9 @@ section:nth-child(odd) {
   .aboutMe .aboutLink {
     display: block;
     margin: 0.5rem;
+  }
+
+  .toTop {
+    visibility: hidden;
   }
 }
