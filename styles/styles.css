@@ -449,7 +449,7 @@ section h2 {
 
 header {
   color: #ffffff;
-  height: 100vh;
+  min-height: 100vh;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #272727), color-stop(50%, #1428a0), to(#1428a0));
   background: linear-gradient(180deg, #272727 50%, #1428a0 50%, #1428a0 100%);
 }
@@ -563,9 +563,10 @@ header nav {
 .aboutMe {
   padding: 0;
 }
-.aboutMe .wrapper {
-  max-width: 1500px;
+.aboutMe .flexParent {
+  max-width: 1350px;
   width: 100%;
+  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -581,7 +582,8 @@ header nav {
           justify-content: space-between;
 }
 .aboutMe img {
-  max-height: calc(60vh + 6rem);
+  justify-self: flex-start;
+  height: calc(60vh + 6rem);
   -webkit-box-flex: 1;
       -ms-flex: 1 5 calc(35% - 3rem);
           flex: 1 5 calc(35% - 3rem);
@@ -590,9 +592,11 @@ header nav {
      object-fit: cover;
 }
 .aboutMe .textContent {
+  justify-self: flex-end;
   -webkit-box-flex: 2;
       -ms-flex: 2 1 calc(65% - 6rem);
           flex: 2 1 calc(65% - 6rem);
+  min-width: 65%;
   padding: 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -741,11 +745,13 @@ header nav {
 }
 .projectList .projectContainer .link:hover,
 .projectList .projectContainer .link:focus {
+  background: #4c60cf;
   -webkit-animation: pulse 0.8s ease;
           animation: pulse 0.8s ease;
+  color: #ffffff;
+  text-shadow: none;
 }
 .projectList .languages {
-  justify-self: flex-end;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -753,17 +759,15 @@ header nav {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
+  justify-self: flex-end;
 }
 .projectList .languages li {
-  background: #1428a0;
   padding: 0 1rem;
-  max-width: -webkit-fit-content;
-  max-width: -moz-fit-content;
-  max-width: fit-content;
 }
 .projectList .languages p {
-  text-shadow: 0.15rem 0.15rem #272727;
+  text-shadow: 0.15rem 0.15rem #001280;
   text-align: center;
+  font-size: 2rem;
 }
 
 .contact {
@@ -815,6 +819,23 @@ header nav {
 .contactForm .contactMessage {
   height: 8rem;
   resize: none;
+}
+
+.socials {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.socials li {
+  padding: 0 2rem;
+}
+.socials li i {
+  font-size: 2rem;
+}
+.socials li:hover i,
+.socials li:focus-within i {
+  color: #4c60cf;
+  -webkit-animation: pulse 0.8s ease;
+          animation: pulse 0.8s ease;
 }
 
 button[type=submit] {

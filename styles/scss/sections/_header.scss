@@ -1,6 +1,6 @@
 header {
     color: $white;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(180deg, $grey 50%, $blue 50%, $blue 100%);
     nav {
         // @include fadeInDelay("0s");

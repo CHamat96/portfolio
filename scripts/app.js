@@ -1,47 +1,49 @@
 const portfolio = {}
 
 portfolio.init = () => {
-  AOS.init();
   portfolio.addStack();
   portfolio.addProjects();
   // portfolio.navScroll();
-  // portfolio.arrowScroll();
+  portfolio.arrowScroll();
 }
 
-// portfolio.arrowScroll = () => {
-//   const scrollArrow = document.querySelector(`.startScroll a[href^="#"]`)
-//   scrollArrow.onClick(function(e) {
-//     let hash = this.getAttribute('href')
-//     let target = document.querySelector(hash);
-//     let navOffset = 100;
-//     let destPosition = target.offsetTop;
-//     let offsetPosition = destPosition - navOffset
+portfolio.arrowScroll = () => {
+  const scrollArrow = document.querySelector(`.startScroll a[href^="#"]`)
+  scrollArrow.onClick = function(e) {
+    e.preventDefault();
+    let hash = this.getAttribute('href')
+    let target = document.querySelector(hash);
+    let navOffset = 100;
+    let destPosition = target.offsetTop;
+    let offsetPosition = destPosition - navOffset
 
-//     window.scrollTo({
-//       top:offsetPosition,
-//       behavior:'smooth'
-//     });
-//   })
-// }
+    window.scrollTo({
+      top:offsetPosition,
+      behavior:'smooth'
+    });
+  }
+}
 
-// portfolio.navScroll = () => {
-//   const navLinks = document.querySelectorAll('nav a[href^="#"]')
-//   navLinks.forEach((anchor) => {
-//     anchor.onClick = function(e) {
-//       e.preventDefault();
-//       let hash = this.getAttribute('href')
-//       let target = document.querySelector(hash)
-//       let navOffset = 100;
-//       let destPosition = target.offsetTop;
-//       let offsetPosition = destPosition - navOffset;
+portfolio.navScroll = () => {
+  const navLinks = document.querySelectorAll('li a[href^="#"]')
+  navLinks.forEach((anchor) => {
+    anchor.onClick = function(e) {
+      e.preventDefault();
+      let hash = this.getAttribute('href')
+      console.log(hash)
+      let target = document.querySelector(hash)
+      // let navOffset = 100;
+      console.log(target.offsetTop)
+      // let destPosition = target.offsetTop;
+      // let offsetPosition = destPosition - navOffset;
 
-//       window.scrollTo({
-//         top:offsetPosition,
-//         behavior:'smooth',
-//       });
-//     };
-//   });
-// }
+      // window.scrollTo({
+      //   top:offsetPosition,
+      //   behavior:'smooth',
+      // });
+    };
+  });
+}
 
 
 portfolio.addStack = () => {
@@ -72,8 +74,8 @@ portfolio.addProjects = () => {
         <div class="projectText">
           <h3>${project.name}</h3>
           <div class="links">
-            <a href="${project.repo}" class="link">GitHub Repo </a>
-            <a href="${project.live}" class="link">Live</a>
+            <a href="${project.repo}" class="link">View Code </a>
+            <a href="${project.live}" class="link">View Live</a>
           </div>
           <p>${project.description}</p>
         </div>
@@ -83,7 +85,6 @@ portfolio.addProjects = () => {
     langList.classList.add("languages")
     project.languages.forEach((language) => {
       const langLi = document.createElement('li')
-      langLi.aos = "flip-up"
       langLi.innerHTML = `<p>${language}</p>`
       langList.appendChild(langLi)
       divElement.appendChild(langList)
@@ -93,3 +94,4 @@ portfolio.addProjects = () => {
 }
 
 portfolio.init()
+AOS.init();

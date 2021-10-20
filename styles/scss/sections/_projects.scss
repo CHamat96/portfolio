@@ -44,21 +44,25 @@
         }
         .link:hover,
         .link:focus {
+            background: $lightBlue;
             animation: pulse 0.8s ease;
+            color: $white;
+            text-shadow: none;
         }
     }
     .languages {
-        justify-self: flex-end;
         display: flex;
         flex-flow: row wrap;
+        justify-self: flex-end;
         li {
-            background: $blue;
+            // background: $blue;
             padding: 0 1rem;
-            max-width: fit-content;
+            // max-width: fit-content;
         }
         p {
-            text-shadow: 0.15rem 0.15rem $grey;
+            text-shadow: 0.15rem 0.15rem $darkBlue;
             text-align: center;
+            font-size: 2rem;
         }
     }
 }

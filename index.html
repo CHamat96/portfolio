@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Corey Hamat | Web Developer</title>
   <link rel="stylesheet" href="./styles/styles.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
@@ -23,8 +23,8 @@
             <ul class="subNav">
               <li><a href="#about">Who am I?</a></li>
               <li><a href="#skills">What Can I Do?</a></li>
-              <li><a href="#projects">What Have I Done?</a></li>
-              <li><a href="#contact">Hot to Contact Me?</a></li>
+              <li><a href="#projects">What Have I Made?</a></li>
+              <li><a href="#contact">How to Contact Me?</a></li>
             </ul>
           </li>
         </ul>
@@ -32,8 +32,8 @@
     </nav>
     <div class="headerMainContent wrapper">
       <div class="centreFlex">
-        <img class="profileImg" src="./assets/profileImage.jpg" alt="Corey Hamat kneeling next to a Portuguese Water Dog" data-aos="fade-right">
-        <div class="siteTitle" data-aos="fade-left">
+        <img class="profileImg" src="./assets/profileImage.jpg" alt="Corey Hamat kneeling next to a Portuguese Water Dog">
+        <div class="siteTitle">
           <h1>Corey <span>Hamat</span></h1>
           <p>Web Developer</p>
         </div>
@@ -46,10 +46,10 @@
   </header>
   <main>
     <section class="aboutMe" id="about">
-      <div class="wrapper">
+      <div class="flexParent wrapper">
         <img src="./assets/profileImage.jpg" alt="Corey Hamat kneeling next to a Portuguese Water Dog" data-aos="fade-right"> 
         <div class="textContent" data-aos="fade-left">
-          <div class="heading" data-aos="fade-in">
+          <div class="heading">
             <h2>About Me</h2>
             <div class="backgroundText" aria-hidden>
               <h4>
@@ -100,14 +100,23 @@
     </section>
     <section class="contact" id="contact">
       <div class="contactFlex">
-        <div class="heading">
+        <div class="heading" data-aos="fade-in">
           <h2>Contact Me</h2>
           <p>Thank you for visiting my website! I cannot wait to speak with you. Feel free to send an email to <a href="mailto:coreyhamat@gmail.com">coreyhamat@gmail.com</a>, or message me directly using this contact form:</p>
           <div class="backgroundText">
             <h4>Get in Touch</h4>
           </div>
+          <div class="socials">
+            <h4>Or, connect with me on Social Media:</h4>
+            <ul class="socialsNav">
+              <li><a href="https://www.linkedin.com/in/corey-hamat/"><i class="fab fa-linkedin"></i></a></li>
+              <li><a href="https://github.com/CHamat96/"><i class="fab fa-github-square"></i></a></li>
+              <li><a href="https://www.instagram.com/coreyhamat/"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="https://www.facebook.com/coreyHamat"> <i class="fab fa-facebook-square"></i></a></li>
+            </ul>
+          </div>
         </div>
-        <form action="https://formspree.io/f/mbjqeonj" method="POST" class="contactForm">
+        <form action="https://formspree.io/f/mbjqeonj" method="POST" class="contactForm" data-aos="fade-up">
           <label for="name" class="sr-only">Enter your name</label>
           <input type="text" name="name" id="name" placeholder="Your Name" class="contactName">
           <label for="email" class="sr-only">Enter your email</label>
@@ -120,11 +129,8 @@
     </section>
   </main>
   <footer>
-    <div class="contactInfo">
-
-    </div>
     <div class="copyright">
-      <a href="#" class="themeCredit">Theme: "Circle"  by Moontheme. &#169copyright 2016.   </a> 
+      <a href="#" class="themeCredit">Theme: "Circle"  by Moontheme. &#169copyright 2016.</a> 
       <a href="#">Created at Juno College by Corey Hamat</a>
     </div>
   </footer>

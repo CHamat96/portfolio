@@ -33,6 +33,22 @@
     }
 }
 
+.socials {
+    color: $white;
+    text-transform: uppercase;
+    li {
+        padding: 0 2rem;
+        i {
+            font-size: 2rem;
+        }
+    }
+    li:hover i,
+    li:focus-within i {
+        color: $lightBlue;
+        animation: pulse 0.8s ease;
+    }
+}
+
 button[type="submit"] {
     background: $darkBlue;
     color: $white;
