@@ -3,49 +3,37 @@ const portfolio = {}
 portfolio.init = () => {
   portfolio.addStack();
   portfolio.addProjects();
-  // portfolio.navScroll();
-  portfolio.arrowScroll();
+  portfolio.navScroll();
 }
 
-portfolio.arrowScroll = () => {
-  const scrollArrow = document.querySelector(`.startScroll a[href^="#"]`)
-  scrollArrow.onClick = function(e) {
-    e.preventDefault();
-    let hash = this.getAttribute('href')
-    let target = document.querySelector(hash);
-    let navOffset = 100;
-    let destPosition = target.offsetTop;
-    let offsetPosition = destPosition - navOffset
-
-    window.scrollTo({
-      top:offsetPosition,
-      behavior:'smooth'
-    });
-  }
-}
-
+// 'smooth scroll' method
 portfolio.navScroll = () => {
-  const navLinks = document.querySelectorAll('li a[href^="#"]')
-  navLinks.forEach((anchor) => {
-    anchor.onClick = function(e) {
+  const navElements = document.querySelectorAll('.navScroll')
+  navElements.forEach((anchor) => {
+    anchor.addEventListener('click', function(e) {
       e.preventDefault();
       let hash = this.getAttribute('href')
-      console.log(hash)
       let target = document.querySelector(hash)
-      // let navOffset = 100;
-      console.log(target.offsetTop)
-      // let destPosition = target.offsetTop;
-      // let offsetPosition = destPosition - navOffset;
-
-      // window.scrollTo({
-      //   top:offsetPosition,
-      //   behavior:'smooth',
-      // });
-    };
-  });
+      let navOffset = 100;
+      let targetPosition = target.offsetTop;
+      let offsetPosition = targetPosition - navOffset
+  
+      window.scrollTo({
+        top:offsetPosition,
+        behavior:"smooth"
+      })
+    })
+  })
 }
 
+// adjusting default settings for AOS package
+AOS.init({
+  duration:700,
+  delay:100,
+})
 
+
+// Display objects from 'tech stack' array on webpage
 portfolio.addStack = () => {
   const gallery = document.querySelector(".skillList")
   skillArray.forEach((skill) => {
@@ -61,6 +49,7 @@ portfolio.addStack = () => {
   })
 }
 
+// Display objects from 'projects' array onto webpage
 portfolio.addProjects = () => {
   const gallery = document.querySelector(".projectList")
   projectArray.forEach((project) => {
@@ -81,14 +70,6 @@ portfolio.addProjects = () => {
         </div>
     `
     listItem.appendChild(divElement)
-    const langList = document.createElement('ul')
-    langList.classList.add("languages")
-    project.languages.forEach((language) => {
-      const langLi = document.createElement('li')
-      langLi.innerHTML = `<p>${language}</p>`
-      langList.appendChild(langLi)
-      divElement.appendChild(langList)
-    })
     gallery.appendChild(listItem)
   })
 }

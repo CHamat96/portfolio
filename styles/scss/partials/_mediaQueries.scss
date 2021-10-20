@@ -9,7 +9,21 @@
 }
 
 @media (max-width: 350px) {
-    header {
+    html {
         font-size: 80%;
+    }
+
+    .centreFlex {
+        margin-top: 4rem;
+    }
+
+    .aboutMe {
+        .linkContainer {
+            align-self: flex-start;
+        }
+        .aboutLink {
+            display: block;
+            margin: 0.5rem;
+        }
     }
 }

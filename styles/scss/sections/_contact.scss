@@ -17,6 +17,13 @@
             color: $white;
             font-size: 1.25rem;
         }
+        a:hover,
+        a:focus {
+            color: $lightBlue;
+        }
+        a:active {
+            color: $darkBlue;
+        }
     }
 }
 .contactForm {
@@ -51,9 +58,17 @@
 
 button[type="submit"] {
     background: $darkBlue;
+    border: solid 0.2rem $darkBlue;
     color: $white;
     text-transform: uppercase;
     font-family: $accentFont;
     padding: 1rem;
-    border: solid 0rem $darkBlue;
+}
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+    background: $white;
+    color: $darkBlue;
+}
+button[type="submit"]:active {
+    background: lightgray;
 }

@@ -20,7 +20,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        align-items: center;
+        align-items: flex-end;
     }
     li {
         z-index: 10;
@@ -36,5 +36,10 @@
         color: $white;
         font-family: $accentFont;
         font-weight: 600;
+    }
+    li:hover i,
+    li:hover p {
+        animation: pulse 0.8s ease;
+        text-shadow: 0.2rem 0.2rem $grey;
     }
 }

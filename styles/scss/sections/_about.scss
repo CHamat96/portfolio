@@ -1,33 +1,33 @@
 .aboutMe {
     padding: 0;
+    margin: 0;
     .flexParent {
-        max-width: 1350px;
         width: 100%;
-        margin: 0;
         display: flex;
+        margin: 0;
         flex-flow: row wrap;
         align-items: center;
         justify-content: space-between;
     }
 
     img {
-        justify-self: flex-start;
+        flex: 1 5 35%;
         height: calc(60vh + 6rem);
-        flex: 1 5 calc(35% - 3rem);
         padding: 0;
         object-fit: cover;
     }
 
     .textContent {
-        justify-self: flex-end;
-        flex: 2 1 calc(65% - 6rem);
-        min-width: 65%;
+        flex: 1 0 calc(65% - 6rem);
+        // min-width: 65%;
         padding: 3rem;
         display: flex;
+        margin-right: 0;
         flex-flow: column;
     }
     .heading {
         flex: 0 0 auto;
+        margin: 0;
         text-align: right;
     }
     p {
@@ -47,8 +47,17 @@
         background: $darkBlue;
         color: $white;
         padding: 0.75rem 0.5rem;
+        border: solid 0.1rem $darkBlue;
         text-transform: uppercase;
         font-weight: 700;
         letter-spacing: 0.1rem;
+    }
+    .aboutLink:hover,
+    .aboutLink:focus {
+        background: $white;
+        color: $lightBlue;
+    }
+    .aboutLink:active {
+        background: lightgray;
     }
 }

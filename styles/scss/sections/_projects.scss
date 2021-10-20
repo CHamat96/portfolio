@@ -37,6 +37,7 @@
             color: $blue;
             text-shadow: 0.1rem 0.1rem lightgrey;
             font-weight: 600;
+            margin: 0 0.5rem;
             padding: 1rem;
             border: solid $white 0.1rem;
             border-radius: 0.25rem;
@@ -45,9 +46,12 @@
         .link:hover,
         .link:focus {
             background: $lightBlue;
-            animation: pulse 0.8s ease;
+            transform: scale(1.2);
             color: $white;
             text-shadow: none;
+        }
+        .link:active {
+            background: $darkBlue;
         }
     }
     .languages {
@@ -60,9 +64,11 @@
             // max-width: fit-content;
         }
         p {
-            text-shadow: 0.15rem 0.15rem $darkBlue;
+            // font-family: $accentFont;
+            text-shadow: 0.25rem 0.25rem $darkBlue;
             text-align: center;
-            font-size: 2rem;
+            font-size: 1.75rem;
+            font-weight: 900;
         }
     }
 }

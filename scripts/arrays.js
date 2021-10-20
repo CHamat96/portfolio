@@ -4,8 +4,10 @@ const projectArray = [
     languages:[
       "React", 
       "Firebase", 
-      "JSX",
-      "SASS"
+      "HTML5",
+      "SASS",
+      "Group Collab",
+      "API"
     ],
     src:`./assets/nygmaPreview.jpg`,
     description:"A randomly generated maze game where, when completed, the user receives a piece of advice (provided by the AdviceSlip API) based on a keyword they select before starting the game.",
@@ -16,8 +18,10 @@ const projectArray = [
     name:'The Digital Cinephile',
     languages:[
       "JavaScript",
-      "HTML",
-      "SASS"
+      "HTML5",
+      "SASS",
+      "Paired Programming",
+      "API"
     ],
     description:`A Movie/TV Show recommendation app, developed through paired programming & built with the TMDB API. A user searches for a movie and/or TV show, then the site  displays a gallery of recommended movies/TV Shows based on their input. The website uses multiple API calls to display each recommendation's poster, official trailer (if available), user rating, and plot overview.`,
     src:'./assets/cinephilePreview.jpg',
@@ -28,8 +32,10 @@ const projectArray = [
     name:'The Perfect Playlist Procurement Program',
     languages:[
       "React",
+      "Firebase",
       "SASS",
-      "Firebase"
+      "HTML5",
+      "API"
     ],
     src:`./assets/playlistPreview.jpg`,
     description:`A playlist generation app, built using the Deezer API. Users select an artist/band, then a random song of theirs is added to a global 'playlist'. Users can search for bands either by genre, or by searching for their name.`,
@@ -39,9 +45,9 @@ const projectArray = [
   {
     name:'Planted',
     languages:[
-      "HTML",
+      "HTML5",
       "SASS",
-      "CSS"
+      "CSS3"
     ],
     src:`./assets/plantedPreview.jpg`,
     description:"A Multi-Page HTML/SCSS website that was designed based on a client brief/styleguide",
@@ -88,15 +94,31 @@ const skillArray = [
     class:'devicon-nodejs-plain'
   },
   {
+    name:'npm',
+    class:'devicon-npm-original-wordmark'
+  },
+  {
     name:'Firebase',
     class:'devicon-firebase-plain'
+  },
+  {
+    name:'Visual Studio',
+    class:'devicon-visualstudio-plain'
   },
   {
     name:'Accessibility',
     class:'fas fa-universal-access'
   },
   {
+    name:'Responsive Design',
+    class:'fas fa-laptop-code'
+  },
+  {
     name:'RESTful APIs',
     class:'fas fa-cogs'
+  },
+  {
+    name:"Adobe Creative Cloud",
+    class:'fas fa-cloud'
   }
 ]

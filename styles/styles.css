@@ -562,14 +562,14 @@ header nav {
 
 .aboutMe {
   padding: 0;
+  margin: 0;
 }
 .aboutMe .flexParent {
-  max-width: 1350px;
   width: 100%;
-  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin: 0;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
@@ -582,25 +582,23 @@ header nav {
           justify-content: space-between;
 }
 .aboutMe img {
-  justify-self: flex-start;
-  height: calc(60vh + 6rem);
   -webkit-box-flex: 1;
-      -ms-flex: 1 5 calc(35% - 3rem);
-          flex: 1 5 calc(35% - 3rem);
+      -ms-flex: 1 5 35%;
+          flex: 1 5 35%;
+  height: calc(60vh + 6rem);
   padding: 0;
   -o-object-fit: cover;
      object-fit: cover;
 }
 .aboutMe .textContent {
-  justify-self: flex-end;
-  -webkit-box-flex: 2;
-      -ms-flex: 2 1 calc(65% - 6rem);
-          flex: 2 1 calc(65% - 6rem);
-  min-width: 65%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 calc(65% - 6rem);
+          flex: 1 0 calc(65% - 6rem);
   padding: 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-right: 0;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
@@ -610,6 +608,7 @@ header nav {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
+  margin: 0;
   text-align: right;
 }
 .aboutMe p {
@@ -634,9 +633,18 @@ header nav {
   background: #001280;
   color: #ffffff;
   padding: 0.75rem 0.5rem;
+  border: solid 0.1rem #001280;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.1rem;
+}
+.aboutMe .aboutLink:hover,
+.aboutMe .aboutLink:focus {
+  background: #ffffff;
+  color: #4c60cf;
+}
+.aboutMe .aboutLink:active {
+  background: lightgray;
 }
 
 .techStack {
@@ -665,9 +673,9 @@ header nav {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 .techStack li {
   z-index: 10;
@@ -685,6 +693,12 @@ header nav {
   color: #ffffff;
   font-family: "Oswald", sans-serif;
   font-weight: 600;
+}
+.techStack li:hover i,
+.techStack li:hover p {
+  -webkit-animation: pulse 0.8s ease;
+          animation: pulse 0.8s ease;
+  text-shadow: 0.2rem 0.2rem #272727;
 }
 
 .portfolio .backgroundText {
@@ -738,6 +752,7 @@ header nav {
   color: #1428a0;
   text-shadow: 0.1rem 0.1rem lightgrey;
   font-weight: 600;
+  margin: 0 0.5rem;
   padding: 1rem;
   border: solid #ffffff 0.1rem;
   border-radius: 0.25rem;
@@ -746,10 +761,13 @@ header nav {
 .projectList .projectContainer .link:hover,
 .projectList .projectContainer .link:focus {
   background: #4c60cf;
-  -webkit-animation: pulse 0.8s ease;
-          animation: pulse 0.8s ease;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
   color: #ffffff;
   text-shadow: none;
+}
+.projectList .projectContainer .link:active {
+  background: #001280;
 }
 .projectList .languages {
   display: -webkit-box;
@@ -765,9 +783,10 @@ header nav {
   padding: 0 1rem;
 }
 .projectList .languages p {
-  text-shadow: 0.15rem 0.15rem #001280;
+  text-shadow: 0.25rem 0.25rem #001280;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.75rem;
+  font-weight: 900;
 }
 
 .contact {
@@ -798,6 +817,13 @@ header nav {
 .contactFlex .heading a {
   color: #ffffff;
   font-size: 1.25rem;
+}
+.contactFlex .heading a:hover,
+.contactFlex .heading a:focus {
+  color: #4c60cf;
+}
+.contactFlex .heading a:active {
+  color: #001280;
 }
 
 .contactForm {
@@ -840,11 +866,21 @@ header nav {
 
 button[type=submit] {
   background: #001280;
+  border: solid 0.2rem #001280;
   color: #ffffff;
   text-transform: uppercase;
   font-family: "Oswald", sans-serif;
   padding: 1rem;
-  border: solid 0rem #001280;
+}
+
+button[type=submit]:hover,
+button[type=submit]:focus {
+  background: #ffffff;
+  color: #001280;
+}
+
+button[type=submit]:active {
+  background: lightgray;
 }
 
 .copyright {
@@ -894,7 +930,20 @@ section:nth-child(odd) {
   }
 }
 @media (max-width: 350px) {
-  header {
+  html {
     font-size: 80%;
+  }
+
+  .centreFlex {
+    margin-top: 4rem;
+  }
+
+  .aboutMe .linkContainer {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  .aboutMe .aboutLink {
+    display: block;
+    margin: 0.5rem;
   }
 }
