@@ -8,13 +8,13 @@
   <link rel="stylesheet" href="./styles/styles.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
-
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
   <header>
     <nav class="wrapper">
       <div class="nameLogo">
-        <a href="">C•H</a>
+        <a href="#top">C•H</a>
       </div>
       <div class="headerNavigation">
         <ul>
@@ -45,11 +45,11 @@
     </div>
   </header>
   <main>
-    <section class="aboutMe" id="about">
+    <section class="aboutMe">
       <div class="flexParent">
         <img src="./assets/profileImage.jpg" alt="Corey Hamat kneeling next to a Portuguese Water Dog" data-aos="fade-right"> 
         <div class="textContent" data-aos="fade-up">
-          <div class="heading">
+          <div class="heading" id="about">
             <h2>About Me</h2>
             <div class="backgroundText" aria-hidden>
               <h4>
@@ -107,13 +107,17 @@
             <h4>Get in Touch</h4>
           </div>
           <div class="socials">
-            <h4>Or, connect with me on Social Media:</h4>
+            <h3>Connect with me on Social Media:</h3>
             <ul class="socialsNav">
               <li><a href="https://www.linkedin.com/in/corey-hamat/"><i class="fab fa-linkedin"></i></a></li>
               <li><a href="https://github.com/CHamat96/"><i class="fab fa-github-square"></i></a></li>
               <li><a href="https://www.instagram.com/coreyhamat/"><i class="fab fa-instagram"></i></a></li>
               <li><a href="https://www.facebook.com/coreyHamat"> <i class="fab fa-facebook-square"></i></a></li>
             </ul>
+          </div>
+          <div class="calendlyLink">
+            <h3>Want to chat?</h2>
+            <a href="" class="calendly">Schedule a meeting on Calendly</a>
           </div>
         </div>
         <form action="https://formspree.io/f/mbjqeonj" method="POST" class="contactForm" data-aos="fade-up">
@@ -136,6 +140,7 @@
   </footer>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="https://kit.fontawesome.com/96a4c9269a.js" crossorigin="anonymous"></script>
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
   <script src="./scripts/arrays.js"></script>
   <script src="./scripts/app.js"></script>
 </body>

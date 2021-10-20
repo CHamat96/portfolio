@@ -4,6 +4,7 @@ portfolio.init = () => {
   portfolio.addStack();
   portfolio.addProjects();
   portfolio.navScroll();
+  portfolio.calendly();
 }
 
 // 'smooth scroll' method
@@ -71,6 +72,18 @@ portfolio.addProjects = () => {
     `
     listItem.appendChild(divElement)
     gallery.appendChild(listItem)
+  })
+}
+
+
+portfolio.calendly = () => {
+  const calendLink = document.querySelector('.calendly')
+  calendLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    Calendly.initPopupWidget({
+      url: 'https://calendly.com/coreyhamat'
+    });
+      return false;
   })
 }
 
