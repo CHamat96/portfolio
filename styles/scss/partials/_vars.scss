@@ -11,3 +11,16 @@ $blue: #1428a0;
 $lightBlue: #4c60cf;
 $darkBlue: #001280;
 $white: #ffffff;
+
+@mixin hoverUnderline {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 0.05rem;
+    left: 0;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}

@@ -485,9 +485,10 @@ header nav {
   text-align: right;
 }
 .headerNavigation .subNav li {
-  padding: 0.5rem 0;
+  padding: 0.5rem;
 }
 .headerNavigation .subNav a {
+  font-weight: 600;
   position: relative;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -505,7 +506,12 @@ header nav {
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
-.headerNavigation .subNav a:hover::after {
+.headerNavigation .subNav li:hover,
+.headerNavigation .subNav li:focus-within {
+  background: #1428a0;
+}
+.headerNavigation .subNav li:hover a::after,
+.headerNavigation .subNav li:focus-within a::after {
   width: 100%;
 }
 .headerNavigation .navHead:hover .subNav,
@@ -540,7 +546,7 @@ header nav {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 13rem;
+  margin-top: 16rem;
   -webkit-animation: fadeDelay 0s, fade 0.8s 0s;
           animation: fadeDelay 0s, fade 0.8s 0s;
 }
@@ -573,7 +579,7 @@ header nav {
 }
 
 .startScroll {
-  margin-top: 5rem;
+  margin: 5rem 0;
   text-align: center;
   -webkit-animation: fadeDelay 1.6s, fade 0.8s 1.6s;
           animation: fadeDelay 1.6s, fade 0.8s 1.6s;

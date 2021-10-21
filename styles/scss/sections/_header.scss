@@ -26,26 +26,22 @@ header {
         display: block;
         text-align: right;
         li {
-            padding: 0.5rem 0;
+            padding: 0.5rem;
         }
         a {
+            font-weight: 600;
             position: relative;
             transition: all 0.5s ease;
         }
         a::after {
-            background: none repeat scroll 0 0 transparent;
-            bottom: 0;
-            content: "";
-            display: block;
-            height: 0.05rem;
-            left: 0;
-            position: absolute;
-            background: #fff;
-            transition: width 0.3s ease 0s, left 0.3s ease 0s;
-            width: 0;
+            @include hoverUnderline;
         }
-
-        a:hover::after {
+        li:hover,
+        li:focus-within {
+            background: $blue;
+        }
+        li:hover a::after,
+        li:focus-within a::after {
             width: 100%;
         }
     }
@@ -66,7 +62,7 @@ header {
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
-    margin-top: 13rem;
+    margin-top: 16rem;
     @include fadeInDelay("0s");
 }
 .profileImg {
@@ -89,7 +85,7 @@ header {
 }
 
 .startScroll {
-    margin-top: 5rem;
+    margin: 5rem 0;
     text-align: center;
     h3 {
         font-family: $accentFont;
