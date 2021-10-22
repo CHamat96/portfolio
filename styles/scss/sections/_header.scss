@@ -4,8 +4,8 @@ header {
     background: linear-gradient(180deg, $grey 50%, $blue 50%, $blue 100%);
     nav {
         @include fadeInDelay("0.8s");
-        padding: 2rem 0;
         display: flex;
+        padding: 2rem 0;
         justify-content: space-between;
         align-items: flex-start;
     }
