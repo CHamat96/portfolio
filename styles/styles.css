@@ -546,7 +546,7 @@ header nav {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 16rem;
+  margin-top: 13rem;
   -webkit-animation: fadeDelay 0s, fade 0.8s 0s;
           animation: fadeDelay 0s, fade 0.8s 0s;
 }
@@ -969,6 +969,7 @@ section:nth-child(odd) {
 .toTop {
   position: fixed;
   z-index: 20;
+  opacity: 0;
   right: 2rem;
   bottom: 5rem;
   padding: 0.75rem;
