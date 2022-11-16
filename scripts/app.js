@@ -33,6 +33,10 @@ const techStack = [
     class:'devicon-react-original'
   },
   {
+    name:"Gatsby",
+    class: 'devicon-gatsby-plain'
+  },
+  {
     name:'GitHub',
     class:'devicon-github-original'
   },
@@ -57,13 +61,33 @@ const techStack = [
     class:'fas fa-laptop-code'
   },
   {
+    name: 'Banner Advertisements',
+    class:"fas fa-ad"
+  },
+  {
     name:'RESTful APIs',
     class:'fas fa-cogs'
   },
   {
     name:"Adobe Creative Cloud",
     class:'fas fa-cloud'
-  }
+  },
+  {
+    name:"Salesforce",
+    class:"devicon-salesforce-plain"
+  },
+  {
+    name:"Veeva CRM",
+    class:'devicon-vuejs-plain'
+  },
+  {
+    name:"Figma",
+    class:"devicon-figma-plain"
+  },
+  {
+    name:"Google Analytics/GTM",
+    class:'fas fa-signal'
+  },
 ]
 
 const projectArray = [
