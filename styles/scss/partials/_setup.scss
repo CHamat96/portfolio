@@ -234,6 +234,12 @@ html {
         max-width: 100%;
         overflow-x: hidden;
     }
+    @include atTablet {
+        font-size:90%;
+    }
+    @include atMobile {
+        font-size:80%;
+    }
 }
 
 .wrapper {

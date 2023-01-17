@@ -3,6 +3,7 @@ import KEY  from './config.js'
 
 const api_key = KEY
 
+
 portfolio.init = () => {
   portfolio.addItems();
   portfolio.navScroll();
@@ -144,7 +145,7 @@ portfolio.navScroll = () => {
       e.preventDefault();
       let hash = this.getAttribute('href')
       let target = document.querySelector(hash)
-      let navOffset = 100;
+      let navOffset = 50;
       let targetPosition = target.offsetTop;
       let offsetPosition = targetPosition - navOffset
       window.scrollTo({

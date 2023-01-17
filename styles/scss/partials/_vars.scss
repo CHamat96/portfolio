@@ -28,8 +28,16 @@ $boxShadow: 5px 5px 8px #242F3645;
     width: 0;
 }
 
+// Updated Media Queries 
+
 @mixin atMobile {
     @media screen and (max-width:350px) {
+        @content;
+    }
+}
+
+@mixin atTablet {
+    @media screen and (max-width:720px) {
         @content;
     }
 }

@@ -64,6 +64,15 @@ header {
     justify-content: center;
     margin-top: 13rem;
     @include fadeInDelay("0s");
+
+    @include atTablet {
+        flex-flow: column;
+        margin-top: 1rem;
+    }
+
+    @include atMobile {
+        margin-top:4rem;
+    }
 }
 .profileImg {
     min-width: 15rem;

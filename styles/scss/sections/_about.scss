@@ -18,6 +18,12 @@
         box-shadow:$boxShadow;
         padding: 0;
         object-fit: cover;
+        @media screen and (max-width:380px) {
+            border:none;
+            box-shadow:none;
+            margin:0;
+            max-height:250px;
+        }
     }
 
     .textContent {
@@ -43,10 +49,9 @@
     }
     .linkContainer {
         margin: 1rem 0;
-        align-self: flex-start;
-        display:grid;
-        max-width:600px;
-        grid-template-columns:repeat(auto-fit, minmax(1fr, 250px));
+        align-self: center;
+        display:flex;
+        flex-wrap:wrap;
         a {
             margin:0.85rem;
         }
@@ -60,6 +65,10 @@
         text-transform: uppercase;
         font-weight: 700;
         letter-spacing: 0.1rem;
+        @include atMobile {
+            display:block;
+            margin:0.5rem;
+        }
     }
     .aboutLink:hover,
     .aboutLink:focus {

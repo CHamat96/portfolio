@@ -1,5 +1,5 @@
-@import "./partials/setup";
 @import "./partials/vars";
+@import "./partials/setup";
 @import "./partials/animations";
 @import "./partials/typography";
 
@@ -52,6 +52,7 @@ section:nth-child(odd) {
     &:active {
         background: $blue;
     }
+    @include atMobile {
+        visibility:hidden;
+    }
 }
-
-@import "./partials/mediaQueries";
