@@ -225,6 +225,8 @@ portfolio.calendly = () => {
 }
 
 portfolio.getLastFMData = async () => {
+
+  // Async API Fetch Request
   const url = new URL(`https://ws.audioscrobbler.com/2.0`)
   url.search = new URLSearchParams({
     method: `user.getRecentTracks`,
@@ -236,13 +238,15 @@ portfolio.getLastFMData = async () => {
   const response = await fetch(url)
   const data = await response.json();
 
+  // Declare new variables from LastFM data
   let latestTrack = data.recenttracks.track[0]
   const link = latestTrack.url;
   let track = latestTrack.name;
   let artist = latestTrack.artist[`#text`];
   let album = latestTrack.album[`#text`];
   let albumCover = latestTrack.image[1]['#text'];
-  console.log(latestTrack, track, artist, album, albumCover)
+
+  // Add data to the page
   const songContainer = document.querySelector('.recentSong');
   songContainer.innerHTML=`
     <a href="${link}" target="_blank" rel="noopener noreferrer">
