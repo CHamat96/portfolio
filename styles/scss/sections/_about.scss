@@ -9,10 +9,13 @@
         align-items: center;
         justify-content: space-between;
     }
-
-    img {
-        flex: 1 5 35%;
+    .profilePicture {
+        flex: 1 3 35%;
         height: calc(60vh + 6rem);
+        width:auto;
+        margin:0.75rem;
+        border:solid 25px $grey;
+        box-shadow:$boxShadow;
         padding: 0;
         object-fit: cover;
     }
@@ -40,7 +43,13 @@
     }
     .linkContainer {
         margin: 1rem 0;
-        align-self: flex-end;
+        align-self: flex-start;
+        display:grid;
+        max-width:600px;
+        grid-template-columns:repeat(auto-fit, minmax(1fr, 250px));
+        a {
+            margin:0.85rem;
+        }
     }
     .aboutLink {
         display: inline;
@@ -59,5 +68,54 @@
     }
     .aboutLink:active {
         background: lightgray;
+    }
+
+    .songSection {
+        align-self:flex-end;
+        margin:15px 0;
+        flex:2 0 50%;
+    }
+
+    .recentSong {
+        .songContainer {
+            color:#000;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            border: solid 2px $darkBlue;
+            background-color: #fff;
+            justify-self:center;
+            padding: 5px 15px;
+            box-shadow:$boxShadow;
+            .songInfo {
+                padding: 2px;
+                margin: 0 10px;
+            }
+            p {
+                font-family: sans-serif;
+                margin: 0px;
+                &.songTitle {
+                font-size: 20px;
+                font-weight: 600;
+                }
+            }
+    
+            .albumCover {
+                height:100%;
+                width:auto;
+                margin: 2px;
+                border: solid 5px;
+                border-color:$darkBlue;
+                border-radius: 50%;
+            }
+        }
+        &:hover .songContainer,
+        &:focus-within .songContainer {
+                background:$darkBlue;
+                color:$white;
+                .albumCover {
+                    border-color:$white;
+                }
+        }
     }
 }
