@@ -57,7 +57,7 @@
   <main>
     <section class="aboutMe" id="about">
       <div class="flexParent">
-        <img src="./assets/profileImage.jpg" alt="Corey Hamat kneeling next to a Portuguese Water Dog" data-aos="fade-right"> 
+        <img class="profilePicture" src="./assets/profileImage.jpg" alt="Corey Hamat kneeling next to a Portuguese Water Dog" data-aos="fade-right"> 
         <div class="textContent" data-aos="fade-up">
           <div class="heading">
             <h2>About Me</h2>
@@ -68,6 +68,12 @@
             </div>
           </div>
           <p>Hi, I’m Corey! I’m a front-end Web Developer from Toronto, Ontario. I enjoy building websites that focus on accessibility & responsiveness. In addition to my professional developer experience, I have prior experience in technical theatre, and have developed a sharp attention to detail & excellent communication skills. I bring the ability to work directly with clients, listen to their needs attentively, and bring their vision for the project to life!</p>
+          <div class="songSection" data-aos="zoom-in-up">
+            <p><strong>FUN FACT</strong>, I'm <em>always</em> listening to music! In fact, this is the most recent song I listened to:</p>
+            <div class="recentSong">
+              <!-- Currently empty. Will be filled with data from the API call -->
+            </div>
+          </div>
           <div class="linkContainer">
             <a href="#projects" class="aboutLink navScroll">See my Projects</a>
             <a class="aboutLink" href="./assets/coreyHamatResume.pdf" download>Download Resume</a>
@@ -151,6 +157,6 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="https://kit.fontawesome.com/96a4c9269a.js" crossorigin="anonymous"></script>
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-  <script src="./scripts/app.js"></script>
+  <script src="./scripts/app.js" type="module"></script>
 </body>
 </html>

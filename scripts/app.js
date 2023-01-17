@@ -1,10 +1,14 @@
 const portfolio = {}
+import KEY  from './config.js'
+
+const api_key = KEY || `bd822bb98e83843bb4c1a3fdf461010b`
 
 portfolio.init = () => {
   portfolio.addItems();
   portfolio.navScroll();
   portfolio.hideButton();
   portfolio.calendly();
+  portfolio.getLastFMData();
 }
 
 const techStack = [
@@ -37,12 +41,28 @@ const techStack = [
     class: 'devicon-gatsby-plain'
   },
   {
+    name:"Vuejs",
+    class:'devicon-vuejs-plain'
+  },
+  {
+    name:"Tailwind CSS",
+    class:'devicon-tailwindcss-original-wordmark'
+  },
+  {
+    name: "Styled Components",
+    class:'fa fa-code'
+  },
+  {
     name:'GitHub',
     class:'devicon-github-original'
   },
   {
     name:'Git',
     class:'devicon-git-plain'
+  },
+  {
+    name:'NPM',
+    class:'devicon-npm-original-wordmark'
   },
   {
     name:'Firebase',
@@ -75,10 +95,6 @@ const techStack = [
   {
     name:"Salesforce",
     class:"devicon-salesforce-plain"
-  },
-  {
-    name:"Veeva CRM",
-    class:'devicon-vuejs-plain'
   },
   {
     name:"Figma",
@@ -205,6 +221,39 @@ portfolio.calendly = () => {
     });
       return false;
   })
+}
+
+portfolio.getLastFMData = async () => {
+  const url = new URL(`https://ws.audioscrobbler.com/2.0`)
+  url.search = new URLSearchParams({
+    method: `user.getRecentTracks`,
+    api_key,
+    user: 'chamat96',
+    limit:1,
+    format:'json'
+  })
+  const response = await fetch(url)
+  const data = await response.json();
+
+  let latestTrack = data.recenttracks.track[0]
+  const link = latestTrack.url;
+  let track = latestTrack.name;
+  let artist = latestTrack.artist[`#text`];
+  let album = latestTrack.album[`#text`];
+  let albumCover = latestTrack.image[1]['#text'];
+  console.log(latestTrack, track, artist, album, albumCover)
+  const songContainer = document.querySelector('.recentSong');
+  songContainer.innerHTML=`
+    <a href="${link}" target="_blank" rel="noopener noreferrer">
+    <div class="songContainer">
+      <img class="albumCover" src="${albumCover}" alt="${album} by ${artist}"/>
+      <div class="songInfo">
+        <p class="songTitle">${track}</p>
+        <p>${artist} - ${album}</p>
+      </div>
+    </div>
+    </a>
+  `
 }
 
 portfolio.init()
