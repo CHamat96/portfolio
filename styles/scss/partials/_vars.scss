@@ -28,3 +28,8 @@ $boxShadow: 5px 5px 8px #242F3645;
     width: 0;
 }
 
+@mixin atMobile {
+    @media screen and (max-width:350px) {
+        @content;
+    }
+}

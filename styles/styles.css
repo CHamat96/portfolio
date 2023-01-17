@@ -695,9 +695,6 @@ header nav {
   -ms-flex-item-align: end;
       align-self: flex-end;
   margin: 15px 0;
-  -webkit-box-flex: 2;
-      -ms-flex: 2 0 50%;
-          flex: 2 0 50%;
 }
 .aboutMe .recentSong .songContainer {
   color: #000;
@@ -717,19 +714,26 @@ header nav {
   -webkit-box-shadow: 5px 5px 8px rgba(36, 47, 54, 0.2705882353);
           box-shadow: 5px 5px 8px rgba(36, 47, 54, 0.2705882353);
 }
-.aboutMe .recentSong .songContainer .songInfo {
+.aboutMe .recentSong:hover .songContainer, .aboutMe .recentSong:focus-within .songContainer {
+  background: #001280;
+  color: #ffffff;
+}
+.aboutMe .recentSong:hover .songContainer .albumCover, .aboutMe .recentSong:focus-within .songContainer .albumCover {
+  border-color: #ffffff;
+}
+.aboutMe .recentSong .songInfo {
   padding: 2px;
   margin: 0 10px;
 }
-.aboutMe .recentSong .songContainer p {
+.aboutMe .recentSong p {
   font-family: sans-serif;
   margin: 0px;
 }
-.aboutMe .recentSong .songContainer p.songTitle {
+.aboutMe .recentSong p.songTitle {
   font-size: 20px;
   font-weight: 600;
 }
-.aboutMe .recentSong .songContainer .albumCover {
+.aboutMe .recentSong .albumCover {
   height: 100%;
   width: auto;
   margin: 2px;
@@ -737,12 +741,16 @@ header nav {
   border-color: #001280;
   border-radius: 50%;
 }
-.aboutMe .recentSong:hover .songContainer, .aboutMe .recentSong:focus-within .songContainer {
-  background: #001280;
-  color: #ffffff;
-}
-.aboutMe .recentSong:hover .songContainer .albumCover, .aboutMe .recentSong:focus-within .songContainer .albumCover {
-  border-color: #ffffff;
+@media screen and (max-width: 350px) {
+  .aboutMe .recentSong {
+    padding: 2px 5px;
+  }
+  .aboutMe .recentSong .albumCover {
+    margin: 0.75px;
+  }
+  .aboutMe .recentSong p.songTitle {
+    font-size: 14px;
+  }
 }
 
 .techStack {

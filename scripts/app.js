@@ -1,7 +1,7 @@
 const portfolio = {}
 import KEY  from './config.js'
 
-const api_key = KEY || `bd822bb98e83843bb4c1a3fdf461010b`
+const api_key = KEY
 
 portfolio.init = () => {
   portfolio.addItems();

@@ -73,7 +73,7 @@
     .songSection {
         align-self:flex-end;
         margin:15px 0;
-        flex:2 0 50%;
+        // flex:2 0 50%;
     }
 
     .recentSong {
@@ -87,27 +87,6 @@
             justify-self:center;
             padding: 5px 15px;
             box-shadow:$boxShadow;
-            .songInfo {
-                padding: 2px;
-                margin: 0 10px;
-            }
-            p {
-                font-family: sans-serif;
-                margin: 0px;
-                &.songTitle {
-                font-size: 20px;
-                font-weight: 600;
-                }
-            }
-    
-            .albumCover {
-                height:100%;
-                width:auto;
-                margin: 2px;
-                border: solid 5px;
-                border-color:$darkBlue;
-                border-radius: 50%;
-            }
         }
         &:hover .songContainer,
         &:focus-within .songContainer {
@@ -116,6 +95,38 @@
                 .albumCover {
                     border-color:$white;
                 }
+        }
+        .songInfo {
+            padding: 2px;
+            margin: 0 10px;
+        }
+        p {
+            font-family: sans-serif;
+            margin: 0px;
+            &.songTitle {
+            font-size: 20px;
+            font-weight: 600;
+            }
+        }
+
+        .albumCover {
+            height:100%;
+            width:auto;
+            margin: 2px;
+            border: solid 5px;
+            border-color:$darkBlue;
+            border-radius: 50%;
+        }
+        @include atMobile {
+            .albumCover {
+                margin:0.75px;
+            }
+            padding:2px 5px;
+            p {
+                &.songTitle {
+                    font-size:14px;
+                }
+            }
         }
     }
 }
