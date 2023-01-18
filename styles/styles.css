@@ -783,14 +783,6 @@ header nav {
   -webkit-box-shadow: 5px 5px 8px rgba(36, 47, 54, 0.2705882353);
           box-shadow: 5px 5px 8px rgba(36, 47, 54, 0.2705882353);
 }
-.aboutMe .recentSong:hover > .songContainer, .aboutMe .recentSong:focus-within > .songContainer {
-  background: #001280;
-  color: #ffffff;
-  border: solid 2px #ffffff;
-}
-.aboutMe .recentSong:hover > .songContainer .albumCover, .aboutMe .recentSong:focus-within > .songContainer .albumCover {
-  border-color: #ffffff;
-}
 .aboutMe .recentSong .songInfo {
   padding: 2px;
   margin: 0 10px;
@@ -829,6 +821,16 @@ header nav {
   .aboutMe .recentSong p.songTitle {
     font-size: 12px;
   }
+}
+.aboutMe .recentSong :hover .songContainer,
+.aboutMe .recentSong :focus-within .songContainer {
+  background-color: #001280;
+  color: #ffffff;
+  border: solid 2px #ffffff;
+}
+.aboutMe .recentSong :hover .albumCover,
+.aboutMe .recentSong :focus-within .albumCover {
+  border-color: #ffffff;
 }
 
 .techStack {
