@@ -112,15 +112,6 @@
             padding: 5px 15px;
             box-shadow:$boxShadow;
         }
-        &:hover > .songContainer,
-        &:focus-within > .songContainer {
-                background:$darkBlue;
-                color:$white;
-                border:solid 2px $white;
-                .albumCover {
-                    border-color:$white;
-                }
-        }
         .songInfo {
             padding: 2px;
             margin: 0 10px;
@@ -160,6 +151,17 @@
                     font-size:12px;
                 }
             }
+        }
+        :hover,
+        :focus-within  {
+                .songContainer {
+                    background-color:$darkBlue;
+                    color:$white;
+                    border:solid 2px $white;
+                }
+                .albumCover {
+                    border-color:$white;
+                }
         }
     }
 }
