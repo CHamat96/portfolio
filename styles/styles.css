@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600&display=swap");
 html {
   line-height: 1.15;
@@ -459,6 +459,10 @@ section h2 {
   padding: 0;
 }
 
+.strong {
+  font-weight: 800;
+}
+
 header {
   color: #ffffff;
   min-height: 100vh;
@@ -677,6 +681,11 @@ header nav {
       -ms-flex-flow: column;
           flex-flow: column;
 }
+@media screen and (max-width: 720px) {
+  .aboutMe .textContent {
+    padding: 2.5rem;
+  }
+}
 .aboutMe .heading {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
@@ -734,9 +743,27 @@ header nav {
   background: lightgray;
 }
 .aboutMe .songSection {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  padding: 15px;
   margin: 15px 0;
+  max-width: 85%;
+  -ms-flex-item-align: center;
+      align-self: center;
+  background: #ffffff;
+  border: solid 5px #9A031E;
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 5px 8px rgba(36, 47, 54, 0.2705882353);
+          box-shadow: 5px 5px 8px rgba(36, 47, 54, 0.2705882353);
+}
+@media screen and (max-width: 600px) {
+  .aboutMe .songSection {
+    max-width: 95%;
+    padding: 8px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .aboutMe .songSection {
+    max-width: 120%;
+  }
 }
 .aboutMe .recentSong .songContainer {
   color: #000;
@@ -756,11 +783,12 @@ header nav {
   -webkit-box-shadow: 5px 5px 8px rgba(36, 47, 54, 0.2705882353);
           box-shadow: 5px 5px 8px rgba(36, 47, 54, 0.2705882353);
 }
-.aboutMe .recentSong:hover .songContainer, .aboutMe .recentSong:focus-within .songContainer {
+.aboutMe .recentSong:hover > .songContainer, .aboutMe .recentSong:focus-within > .songContainer {
   background: #001280;
   color: #ffffff;
+  border: solid 2px #ffffff;
 }
-.aboutMe .recentSong:hover .songContainer .albumCover, .aboutMe .recentSong:focus-within .songContainer .albumCover {
+.aboutMe .recentSong:hover > .songContainer .albumCover, .aboutMe .recentSong:focus-within > .songContainer .albumCover {
   border-color: #ffffff;
 }
 .aboutMe .recentSong .songInfo {
@@ -783,7 +811,7 @@ header nav {
   border-color: #001280;
   border-radius: 50%;
 }
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 720px) {
   .aboutMe .recentSong {
     padding: 2px 5px;
   }
@@ -791,7 +819,15 @@ header nav {
     margin: 0.75px;
   }
   .aboutMe .recentSong p.songTitle {
-    font-size: 14px;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .aboutMe .recentSong p {
+    font-size: 10px;
+  }
+  .aboutMe .recentSong p.songTitle {
+    font-size: 12px;
   }
 }
 

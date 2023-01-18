@@ -3,7 +3,6 @@ import KEY  from './config.js'
 
 const api_key = KEY
 
-
 portfolio.init = () => {
   portfolio.addItems();
   portfolio.navScroll();
@@ -241,7 +240,14 @@ portfolio.getLastFMData = async () => {
   // Declare new variables from LastFM data
   let latestTrack = data.recenttracks.track[0]
   const link = latestTrack.url;
+
   let track = latestTrack.name;
+  // Truncate the song name if it's greater than 80 characters long
+  if (track.length > 80) {
+    const lastSpace = track.substring(0, 81).lastIndexOf(' ');
+    track = `${track.slice(0, lastSpace)}...`
+  }
+
   let artist = latestTrack.artist[`#text`];
   let album = latestTrack.album[`#text`];
   let albumCover = latestTrack.image[1]['#text'];

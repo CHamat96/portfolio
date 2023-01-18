@@ -28,11 +28,13 @@
 
     .textContent {
         flex: 1 0 calc(65% - 6rem);
-        // min-width: 65%;
         padding: 3rem;
         display: flex;
         margin-right: 0;
         flex-flow: column;
+        @include atTablet {
+            padding:2.5rem;
+        }
     }
     .heading {
         flex: 0 0 auto;
@@ -80,9 +82,22 @@
     }
 
     .songSection {
-        align-self:flex-end;
+        padding:15px;
         margin:15px 0;
-        // flex:2 0 50%;
+        max-width:85%;
+        align-self:center;
+        background:$white;
+        border:solid 5px $red;
+        border-radius:15px;
+        box-shadow:$boxShadow;
+
+        @media screen and (max-width:600px){
+            max-width:95%;
+            padding:8px;
+        }
+        @include atMobile {
+            max-width:120%;
+        }
     }
 
     .recentSong {
@@ -97,10 +112,11 @@
             padding: 5px 15px;
             box-shadow:$boxShadow;
         }
-        &:hover .songContainer,
-        &:focus-within .songContainer {
+        &:hover > .songContainer,
+        &:focus-within > .songContainer {
                 background:$darkBlue;
                 color:$white;
+                border:solid 2px $white;
                 .albumCover {
                     border-color:$white;
                 }
@@ -126,14 +142,22 @@
             border-color:$darkBlue;
             border-radius: 50%;
         }
-        @include atMobile {
+        @include atTablet {
             .albumCover {
                 margin:0.75px;
             }
             padding:2px 5px;
             p {
                 &.songTitle {
-                    font-size:14px;
+                    font-size:16px;
+                }
+            }
+        }
+        @include atMobile {
+            p {
+                font-size:10px;
+                &.songTitle {
+                    font-size:12px;
                 }
             }
         }
