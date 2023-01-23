@@ -108,6 +108,13 @@ const techStack = [
 
 const projectArray = [
   {
+    name:'The Beef Shop',
+    src:`./assets/beefPreview.png`,
+    description:"An example webpage for an Italian Beef Restaurant. Built using GatsbyJs & the Sanity headless CMS. NOTE: this project is still a work-in-progress with some functionality still to be completed",
+    repo:`https://github.com/CHamat96/the-beef-shop`,
+    live:`https://the-beef-shop.netlify.app`
+  },
+  {
     name:'The Nygma Machine',
     src:`./assets/nygmaPreview.jpg`,
     description:"A randomly generated maze game where, when completed, the user receives a piece of advice (provided by the AdviceSlip API) based on a keyword they select before starting the game.",
@@ -119,13 +126,6 @@ const projectArray = [
     src:'./assets/cinephilePreview.jpg',
     repo:`http://github.com/cohort36-Bootcamp-Project-02/theDigitalCinephile/`,
     live:`https://theDigitalCinephile.netlify.app`
-  },
-  {
-    name:'The Perfect Playlist Procurement Program',
-    src:`./assets/playlistPreview.jpg`,
-    description:`A playlist generation app, built using the Deezer API. Users select an artist/band, then a random song of theirs is added to a global 'playlist'. Users can search for bands either by genre, or by searching for their name.`,
-    repo:`https://github.com/chamat96/corey-hamat-project-03`,
-    live:`https://perfect-playlist-procurement.netlify.app`
   },
   {
     name:'Planted',
