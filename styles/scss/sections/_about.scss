@@ -10,7 +10,7 @@
         justify-content: space-between;
     }
     .profilePicture {
-        flex: 1 3 35%;
+        flex: 1 3 30%;
         height: calc(60vh + 6rem);
         width:auto;
         margin:0.75rem;
@@ -84,7 +84,7 @@
     .songSection {
         padding:15px;
         margin:15px 0;
-        max-width:85%;
+        max-width:800px;
         align-self:center;
         background:$white;
         border:solid 5px $red;
@@ -94,9 +94,6 @@
         @media screen and (max-width:600px){
             max-width:95%;
             padding:8px;
-        }
-        @include atMobile {
-            max-width:120%;
         }
     }
 
@@ -161,6 +158,72 @@
                 }
                 .albumCover {
                     border-color:$white;
+                }
+        }
+    }
+
+    .otherTracks {
+        h4 {
+            margin:10px 0;
+        }
+        @media screen and (max-width:500px) {
+            display:none;
+        }
+    }
+
+
+    .trackGrid {
+        display:grid;
+        margin:0 auto;
+        grid-template-columns:repeat(auto-fill, minmax(132px, 1fr));
+        grid-gap:0.2rem;
+        place-content:center;
+
+        .trackContainer {
+            position:relative;
+            border:solid 2px black;
+            img {
+                backface-visibility: hidden;
+                -moz-backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
+                transition:0.3s ease;
+                width:100%;
+            }
+        }
+
+        .trackGridItem {
+            color:#000;
+            &:hover,
+            &:focus {
+                .trackContainer {
+                    box-shadow:$boxShadow;
+                }
+                img {
+                    opacity: 0.3;
+                }
+                .overlay {
+                    opacity:1;
+                }
+            }
+        }
+
+        .overlay {
+            position:absolute;
+            top: 50%;
+            left:10px;
+            transform: translate(-10px, -50%);
+            font-size:clamp(0.8rem, 11px, 14px);
+            padding:0px 5px;
+            opacity:0;
+            transition:0.3s ease;
+            p {
+                margin:5px 0;
+            }
+        }
+        @include atTabletLandscape {
+                grid-template-columns:repeat(auto-fit, minmax(100px, 1fr));
+                .overlay {
+                    font-size:10px;
                 }
         }
     }

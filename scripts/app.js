@@ -1,7 +1,9 @@
 const portfolio = {}
-import KEY  from './config.js'
+// import KEY  from './config.js'
 
-const api_key = KEY
+// const api_key = KEY
+
+const api_key = `bd822bb98e83843bb4c1a3fdf461010b`
 
 portfolio.init = () => {
   portfolio.addItems();
@@ -231,15 +233,29 @@ portfolio.getLastFMData = async () => {
     method: `user.getRecentTracks`,
     api_key,
     user: 'chamat96',
-    limit:1,
+    limit:15,
     format:'json'
   })
   const response = await fetch(url)
   const data = await response.json();
 
   // Declare new variables from LastFM data
-  let latestTrack = data.recenttracks.track[0]
+  let trackList = data.recenttracks.track
+  let latestTrack = trackList[0]
   const link = latestTrack.url;
+
+  const otherTracks = trackList.slice(1, 15)
+  let filteredTracks = []
+
+  // create a list with only unique albums
+  for(let i = 0; i < otherTracks.length; i++) {
+    let song = otherTracks[i]
+    let nextSong = otherTracks[i + 1]
+    if(nextSong && song.album[`#text`] !== nextSong.album[`#text`]) {
+      filteredTracks.push(song)
+    }
+  }
+  
 
   let track = latestTrack.name;
   // Truncate the song name if it's greater than 80 characters long
@@ -252,7 +268,7 @@ portfolio.getLastFMData = async () => {
   let album = latestTrack.album[`#text`];
   let albumCover = latestTrack.image[1]['#text'];
 
-  // Add data to the page
+  // Add data for the "Most Recent" song to the page
   const songContainer = document.querySelector('.recentSong');
   songContainer.innerHTML=`
     <a href="${link}" target="_blank" rel="noopener noreferrer">
@@ -265,6 +281,52 @@ portfolio.getLastFMData = async () => {
     </div>
     </a>
   `
+
+  // Add gallery below latest song to display the other tracks
+  const songSection = document.querySelector('.songSection')
+  let moreTracksContainer = document.createElement('div')
+  moreTracksContainer.classList.add('otherTracks')
+  moreTracksContainer.innerHTML = `
+  <h4>Other Recent Tracks:</h4>
+  `
+  const otherTracksList = document.createElement('div')
+  otherTracksList.classList.add('trackGrid')
+  filteredTracks.forEach((song) => {
+      const container = document.createElement('a')
+      const title = song.name
+      // Truncate the song title
+      if (title.length > 25) {
+        const lastSpace = title.substring(0, 26).lastIndexOf(' ');
+        title = `${title.slice(0, lastSpace)}...`
+      }
+      let artist = song.artist['#text']
+      let album = song.album[`#text`]
+      // truncate the album title (just in case)
+      if (album.length > 25) {
+        const lastSpace = album.substring(0, 26).lastIndexOf(' ');
+        album = `${album.slice(0, lastSpace)}...`
+      }
+
+      let image = song.image[2][`#text`]
+      let link = song.url
+
+      container.setAttribute('href', link)
+      container.classList.add('trackGridItem')
+      container.innerHTML = `
+      <div class="trackContainer">
+        <img src=${image} alt="${title} by ${artist}"/>
+        <div class="overlay">
+        <p class="strong">${title}</p>
+        <p>${artist}</p>
+        <p class="italic">${album}</p>
+        </div>
+      </div>
+      `
+      otherTracksList.appendChild(container)
+  })
+  
+  moreTracksContainer.appendChild(otherTracksList)
+  songSection.append(moreTracksContainer)
 }
 
 portfolio.init()

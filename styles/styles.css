@@ -463,6 +463,10 @@ section h2 {
   font-weight: 800;
 }
 
+.italic {
+  font-style: italic;
+}
+
 header {
   color: #ffffff;
   min-height: 100vh;
@@ -646,8 +650,8 @@ header nav {
 }
 .aboutMe .profilePicture {
   -webkit-box-flex: 1;
-      -ms-flex: 1 3 35%;
-          flex: 1 3 35%;
+      -ms-flex: 1 3 30%;
+          flex: 1 3 30%;
   height: calc(60vh + 6rem);
   width: auto;
   margin: 0.75rem;
@@ -745,7 +749,7 @@ header nav {
 .aboutMe .songSection {
   padding: 15px;
   margin: 15px 0;
-  max-width: 85%;
+  max-width: 800px;
   -ms-flex-item-align: center;
       align-self: center;
   background: #ffffff;
@@ -758,11 +762,6 @@ header nav {
   .aboutMe .songSection {
     max-width: 95%;
     padding: 8px;
-  }
-}
-@media screen and (max-width: 350px) {
-  .aboutMe .songSection {
-    max-width: 120%;
   }
 }
 .aboutMe .recentSong .songContainer {
@@ -831,6 +830,69 @@ header nav {
 .aboutMe .recentSong :hover .albumCover,
 .aboutMe .recentSong :focus-within .albumCover {
   border-color: #ffffff;
+}
+.aboutMe .otherTracks h4 {
+  margin: 10px 0;
+}
+@media screen and (max-width: 500px) {
+  .aboutMe .otherTracks {
+    display: none;
+  }
+}
+.aboutMe .trackGrid {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
+  grid-gap: 0.2rem;
+  place-content: center;
+}
+.aboutMe .trackGrid .trackContainer {
+  position: relative;
+  border: solid 2px black;
+}
+.aboutMe .trackGrid .trackContainer img {
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  width: 100%;
+}
+.aboutMe .trackGrid .trackGridItem {
+  color: #000;
+}
+.aboutMe .trackGrid .trackGridItem:hover .trackContainer, .aboutMe .trackGrid .trackGridItem:focus .trackContainer {
+  -webkit-box-shadow: 5px 5px 8px rgba(36, 47, 54, 0.2705882353);
+          box-shadow: 5px 5px 8px rgba(36, 47, 54, 0.2705882353);
+}
+.aboutMe .trackGrid .trackGridItem:hover img, .aboutMe .trackGrid .trackGridItem:focus img {
+  opacity: 0.3;
+}
+.aboutMe .trackGrid .trackGridItem:hover .overlay, .aboutMe .trackGrid .trackGridItem:focus .overlay {
+  opacity: 1;
+}
+.aboutMe .trackGrid .overlay {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  -webkit-transform: translate(-10px, -50%);
+          transform: translate(-10px, -50%);
+  font-size: clamp(0.8rem, 11px, 14px);
+  padding: 0px 5px;
+  opacity: 0;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.aboutMe .trackGrid .overlay p {
+  margin: 5px 0;
+}
+@media screen and (max-width: 800px) {
+  .aboutMe .trackGrid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  .aboutMe .trackGrid .overlay {
+    font-size: 10px;
+  }
 }
 
 .techStack {
