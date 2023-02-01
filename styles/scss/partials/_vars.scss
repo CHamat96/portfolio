@@ -43,3 +43,9 @@ $boxShadow: 5px 5px 8px #242F3645;
         @content;
     }
 }
+
+@mixin atTabletLandscape {
+    @media screen and (max-width: 800px) {
+        @content;
+    }
+}
