@@ -747,11 +747,14 @@ header nav {
   background: lightgray;
 }
 .aboutMe .songSection {
+  -webkit-box-flex: 2;
+      -ms-flex: 2 1 auto;
+          flex: 2 1 auto;
   padding: 15px;
   margin: 15px 0;
   max-width: 800px;
-  -ms-flex-item-align: center;
-      align-self: center;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   background: #ffffff;
   border: solid 5px #9A031E;
   border-radius: 15px;
@@ -839,59 +842,28 @@ header nav {
     display: none;
   }
 }
-.aboutMe .trackGrid {
-  display: grid;
-  margin: 0 auto;
-  grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
-  grid-gap: 0.2rem;
-  place-content: center;
+.aboutMe .playlist h4 {
+  margin: 10px;
 }
-.aboutMe .trackGrid .trackContainer {
-  position: relative;
-  border: solid 2px black;
+.aboutMe .playlist iframe {
+  width: 90%;
+  margin: 0 5%;
 }
-.aboutMe .trackGrid .trackContainer img {
-  backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
-  width: 100%;
-}
-.aboutMe .trackGrid .trackGridItem {
-  color: #000;
-}
-.aboutMe .trackGrid .trackGridItem:hover .trackContainer, .aboutMe .trackGrid .trackGridItem:focus .trackContainer {
-  -webkit-box-shadow: 5px 5px 8px rgba(36, 47, 54, 0.2705882353);
-          box-shadow: 5px 5px 8px rgba(36, 47, 54, 0.2705882353);
-}
-.aboutMe .trackGrid .trackGridItem:hover img, .aboutMe .trackGrid .trackGridItem:focus img {
-  opacity: 0.3;
-}
-.aboutMe .trackGrid .trackGridItem:hover .overlay, .aboutMe .trackGrid .trackGridItem:focus .overlay {
-  opacity: 1;
-}
-.aboutMe .trackGrid .overlay {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  -webkit-transform: translate(-10px, -50%);
-          transform: translate(-10px, -50%);
-  font-size: clamp(0.8rem, 11px, 14px);
-  padding: 0px 5px;
-  opacity: 0;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
-}
-.aboutMe .trackGrid .overlay p {
-  margin: 5px 0;
-}
-@media screen and (max-width: 800px) {
-  .aboutMe .trackGrid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+@media screen and (max-width: 720px) {
+  .aboutMe .playlist iframe {
+    height: 352px;
   }
-  .aboutMe .trackGrid .overlay {
-    font-size: 10px;
+}
+@media screen and (max-width: 400px) {
+  .aboutMe .playlist iframe {
+    width: 100%;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 350px) {
+  .aboutMe .playlist iframe {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
   }
 }
 
