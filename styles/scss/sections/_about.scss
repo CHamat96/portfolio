@@ -82,10 +82,11 @@
     }
 
     .songSection {
+        flex: 2 1 auto;
         padding:15px;
         margin:15px 0;
         max-width:800px;
-        align-self:center;
+        align-self:flex-end;
         background:$white;
         border:solid 5px $red;
         border-radius:15px;
@@ -170,61 +171,24 @@
             display:none;
         }
     }
-
-
-    .trackGrid {
-        display:grid;
-        margin:0 auto;
-        grid-template-columns:repeat(auto-fill, minmax(132px, 1fr));
-        grid-gap:0.2rem;
-        place-content:center;
-
-        .trackContainer {
-            position:relative;
-            border:solid 2px black;
-            img {
-                backface-visibility: hidden;
-                -moz-backface-visibility: hidden;
-                -webkit-backface-visibility: hidden;
-                transition:0.3s ease;
+    .playlist {
+        h4 {
+            margin:10px
+        }
+        iframe {
+            width:90%;
+            margin:0 5%;
+            @include atTablet {
+                height:352px;
+            }
+            @media screen and (max-width:400px) {
                 width:100%;
+                margin:0;
             }
-        }
-
-        .trackGridItem {
-            color:#000;
-            &:hover,
-            &:focus {
-                .trackContainer {
-                    box-shadow:$boxShadow;
-                }
-                img {
-                    opacity: 0.3;
-                }
-                .overlay {
-                    opacity:1;
-                }
+            @include atMobile {
+                transform:scale(0.95)
             }
-        }
-
-        .overlay {
-            position:absolute;
-            top: 50%;
-            left:10px;
-            transform: translate(-10px, -50%);
-            font-size:clamp(0.8rem, 11px, 14px);
-            padding:0px 5px;
-            opacity:0;
-            transition:0.3s ease;
-            p {
-                margin:5px 0;
-            }
-        }
-        @include atTabletLandscape {
-                grid-template-columns:repeat(auto-fit, minmax(100px, 1fr));
-                .overlay {
-                    font-size:10px;
-                }
         }
     }
+
 }

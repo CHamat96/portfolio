@@ -3,6 +3,7 @@ import KEY  from './config.js'
 
 const api_key = KEY
 
+
 portfolio.init = () => {
   portfolio.addItems();
   portfolio.navScroll();
@@ -242,29 +243,17 @@ portfolio.getLastFMData = async () => {
   let latestTrack = trackList[0]
   const link = latestTrack.url;
 
-  const otherTracks = trackList.slice(1, 15)
-  let filteredTracks = []
-
-  // create a list with only unique albums
-  for(let i = 0; i < otherTracks.length; i++) {
-    let song = otherTracks[i]
-    let nextSong = otherTracks[i + 1]
-    if(nextSong && song.album[`#text`] !== nextSong.album[`#text`]) {
-      filteredTracks.push(song)
-    }
-  }
-  
-
   let track = latestTrack.name;
   // Truncate the song name if it's greater than 80 characters long
   if (track.length > 80) {
     const lastSpace = track.substring(0, 81).lastIndexOf(' ');
     track = `${track.slice(0, lastSpace)}...`
   }
+  
 
   let artist = latestTrack.artist[`#text`];
   let album = latestTrack.album[`#text`];
-  let albumCover = latestTrack.image[1]['#text'];
+  let albumCover = latestTrack.image[0]['#text'];
 
   // Add data for the "Most Recent" song to the page
   const songContainer = document.querySelector('.recentSong');
@@ -279,53 +268,16 @@ portfolio.getLastFMData = async () => {
     </div>
     </a>
   `
+  const playlistSection = document.createElement('div')
+  playlistSection.classList.add('playlist')
+  playlistSection.innerHTML = `
+  <h4>Here are a few other songs that I've loved listening to recently:</h4>
+  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4oSPeMNOcH2wRoHq1N0rHq?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"/>`
 
-  // Add gallery below latest song to display the other tracks
   const songSection = document.querySelector('.songSection')
-  let moreTracksContainer = document.createElement('div')
-  moreTracksContainer.classList.add('otherTracks')
-  moreTracksContainer.innerHTML = `
-  <h4>Other Recent Tracks:</h4>
-  `
-  const otherTracksList = document.createElement('div')
-  otherTracksList.classList.add('trackGrid')
-  filteredTracks.forEach((song) => {
-      const container = document.createElement('a')
-      const title = song.name
-      // Truncate the song title
-      if (title.length > 25) {
-        const lastSpace = title.substring(0, 26).lastIndexOf(' ');
-        title = `${title.slice(0, lastSpace)}...`
-      }
-      let artist = song.artist['#text']
-      let album = song.album[`#text`]
-      // truncate the album title (just in case)
-      if (album.length > 25) {
-        const lastSpace = album.substring(0, 26).lastIndexOf(' ');
-        album = `${album.slice(0, lastSpace)}...`
-      }
-
-      let image = song.image[2][`#text`]
-      let link = song.url
-
-      container.setAttribute('href', link)
-      container.classList.add('trackGridItem')
-      container.innerHTML = `
-      <div class="trackContainer">
-        <img src=${image} alt="${title} by ${artist}"/>
-        <div class="overlay">
-        <p class="strong">${title}</p>
-        <p>${artist}</p>
-        <p class="italic">${album}</p>
-        </div>
-      </div>
-      `
-      otherTracksList.appendChild(container)
-  })
-  
-  moreTracksContainer.appendChild(otherTracksList)
-  songSection.append(moreTracksContainer)
+  songSection.appendChild(playlistSection)
 }
+
 
 portfolio.init()
 AOS.init();
