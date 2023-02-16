@@ -9,26 +9,31 @@
 }
 
 .projectList {
-    flex-flow: row wrap;
-    li {
-        flex: 1 1 calc(50% - 2rem);
-        margin: 1rem;
-    }
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
     .project {
         background: $grey;
         color: $white;
         box-shadow: 1rem 1rem $blue;
+        flex: 2 1 calc(500px - 2rem);
+        margin:2rem;
+        max-width:auto;
     }
     .projectContainer {
+        padding-bottom:1.5rem;
         .projectText {
             display: flex;
             flex-flow: column wrap;
-            padding: 1.5rem;
+            padding: 1.5rem 1.5rem 0rem 1.5rem;
         }
         .screenShot {
             justify-self: flex-start;
             max-height: 25rem;
             object-fit: cover;
+        }
+        p {
+            margin:5px 0;
         }
         height: 100%;
         .link {
