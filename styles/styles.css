@@ -302,6 +302,11 @@ html body {
   width: 85%;
   margin: 0 auto;
 }
+@media screen and (max-width: 350px) {
+  .wrapper {
+    width: 90%;
+  }
+}
 
 .heading {
   position: relative;
@@ -394,6 +399,7 @@ h2 {
 
 h3 {
   font-size: 2.5rem;
+  margin: 8px 0;
 }
 
 p,
@@ -930,24 +936,28 @@ header nav {
 }
 
 .projectList {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-}
-.projectList li {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 calc(50% - 2rem);
-          flex: 1 1 calc(50% - 2rem);
-  margin: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .projectList .project {
   background: #272727;
   color: #ffffff;
   -webkit-box-shadow: 1rem 1rem #1428a0;
           box-shadow: 1rem 1rem #1428a0;
+  -webkit-box-flex: 2;
+      -ms-flex: 2 1 calc(500px - 2rem);
+          flex: 2 1 calc(500px - 2rem);
+  margin: 2rem;
+  max-width: auto;
 }
 .projectList .projectContainer {
+  padding-bottom: 1.5rem;
   height: 100%;
 }
 .projectList .projectContainer .projectText {
@@ -958,13 +968,16 @@ header nav {
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 0rem 1.5rem;
 }
 .projectList .projectContainer .screenShot {
   justify-self: flex-start;
   max-height: 25rem;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.projectList .projectContainer p {
+  margin: 5px 0;
 }
 .projectList .projectContainer .link {
   display: inline-block;

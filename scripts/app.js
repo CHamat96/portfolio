@@ -109,21 +109,28 @@ const techStack = [
 
 const projectArray = [
   {
+    name:'Will it Emo Night?',
+    src:`./assets/emoPreview.png`,
+    description:[`Search for any song and see if it is "Sad" or "Moshable" enough to be considered Emo. Users can also add each queried song to an Emo Night Playlist, then export the playlist to their Spotify profile. Built using React, React-Redux, and the Spotify API.`, `NOTE: The best way to view the project with its full functionality would be to clone a local version from my GitHub repo, and request a new Client ID from Spotify (full details and instructions are in the repo's README)`],
+    repo:`https://github.com/CHamat96/will-it-emo-night?`,
+    live:`https://will-it-emo-night.netlify.app`
+  },
+  {
     name:'The Beef Shop',
     src:`./assets/beefPreview.png`,
-    description:"An example webpage for an Italian Beef Restaurant. Built using GatsbyJs & the Sanity headless CMS. NOTE: this project is still a work-in-progress with some functionality still to be completed",
+    description:["An example webpage for an Italian Beef Restaurant. Built using GatsbyJs & the Sanity headless CMS.", "NOTE: this project is still a work-in-progress with some functionality still to be completed",],
     repo:`https://github.com/CHamat96/the-beef-shop`,
     live:`https://the-beef-shop.netlify.app`
   },
   {
     name:'The Nygma Machine',
     src:`./assets/nygmaPreview.jpg`,
-    description:"A randomly generated maze game where, when completed, the user receives a piece of advice (provided by the AdviceSlip API) based on a keyword they select before starting the game.",
+    description:["A randomly generated maze game where, when completed, the user receives a piece of advice (provided by the AdviceSlip API) based on a keyword they select before starting the game."],
     repo:`https://github.com/nygma-machine/project-4`,
     live:`https://nygma.netlify.app`},
   {
     name:'The Digital Cinephile',
-    description:`A Movie/TV Show recommendation app, developed through paired programming & built with the TMDB API. A user searches for a movie and/or TV show, then the site  displays a gallery of recommended movies/TV Shows based on their input. The website uses multiple API calls to display each recommendation's poster, official trailer (if available), user rating, and plot overview.`,
+    description:[`A Movie/TV Show recommendation app, developed through paired programming & built with the TMDB API. A user searches for a movie and/or TV show, then the site  displays a gallery of recommended movies/TV Shows based on their input.`, `The website uses multiple API calls to display each recommendation's poster, official trailer (if available), user rating, and plot overview.`],
     src:'./assets/cinephilePreview.jpg',
     repo:`http://github.com/cohort36-Bootcamp-Project-02/theDigitalCinephile/`,
     live:`https://theDigitalCinephile.netlify.app`
@@ -131,9 +138,16 @@ const projectArray = [
   {
     name:'Planted',
     src:`./assets/plantedPreview.jpg`,
-    description:"A Multi-Page HTML/SCSS website that was designed based on a client brief/styleguide",
+    description:["A Multi-Page HTML/SCSS website that was designed based on a client brief/styleguide"],
     repo:`https://github.com/CHamat96/coreyHamatProject01`,
     live:'https://chamat96.github.io/coreyHamatProject01/index.html'
+  },
+  {
+    name:`Weather Forecast App`,
+    src:`./assets/weatherPreview.png`,
+    description:["A sample weather widget that displays the 5-day weather forecast for three select cities. Built using React, styled-components, and the OpenWeatherMap API", "I plan on continuously updating this project and adding more features. Including the ability to search for a city & display the queried forecast."],
+    repo:`https://github.com/CHamat96/weather-widget`,
+    live:'https://coreys-weather-widget.netlify.app'
   },
 ]
 
@@ -188,12 +202,21 @@ portfolio.addItems = () => {
       <div class="projectText">
         <h3>${project.name}</h3>
         <div class="links">
-          <a href="${project.repo}" class="link">View Code </a>
-          <a href="${project.live}" class="link">View Live</a>
+          <a href="${project.repo}" target="_blank" rel="noopener noreferrer" class="link">View Code </a>
+          <a href="${project.live}" target="_blank" rel="noopener noreferrer" class="link">View Live</a>
         </div>
-        <p>${project.description}</p>
       </div>
     `
+    // const projectText = divElement.querySelector('projectText')
+    // console.log(projectText)
+    const descriptionContainer = document.createElement('div')
+    descriptionContainer.classList.add('projectText')
+    project.description.forEach((text) => {
+      const paragraph = document.createElement('p')
+      paragraph.textContent = text
+      descriptionContainer.append(paragraph)
+    })
+    divElement.append(descriptionContainer)
     listItem.appendChild(divElement)
     projectGallery.appendChild(listItem)
   })

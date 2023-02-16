@@ -246,6 +246,9 @@ html {
     max-width: 1350px;
     width: 85%;
     margin: 0 auto;
+    @include atMobile {
+        width:90%;
+    }
 }
 
 .heading {
