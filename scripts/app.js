@@ -38,6 +38,10 @@ const techStack = [
     class:'devicon-react-original'
   },
   {
+    name:"Redux",
+    class:'devicon-redux-original'
+  },
+  {
     name:"Gatsby",
     class: 'devicon-gatsby-plain'
   },
@@ -52,6 +56,10 @@ const techStack = [
   {
     name: "Styled Components",
     class:'fa fa-code'
+  },
+  {
+    name: 'graphql',
+    class:'devicon-graphql-plain'
   },
   {
     name:'GitHub',
@@ -84,6 +92,10 @@ const techStack = [
   {
     name: 'Banner Advertisements',
     class:"fas fa-ad"
+  },
+  {
+    name:"0Auth",
+    class:"fas fa-key"
   },
   {
     name:'RESTful APIs',
